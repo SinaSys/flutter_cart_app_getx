@@ -6,6 +6,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   const ProductDetailScreen(this.name, this.image);
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

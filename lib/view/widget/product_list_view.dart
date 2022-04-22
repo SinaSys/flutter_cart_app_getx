@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/product_controller.dart';
 import '../../model/product.dart';
-import '../../until/constants.dart';
+import '../../util/constants.dart';
 
 final ProductController controller = Get.put(ProductController());
 
 class ProductListView extends StatelessWidget {
-  const ProductListView();
+  const ProductListView({Key? key}) : super(key: key);
 
   Widget countButton(int index, void Function(int index) counter,
       {IconData icon = Icons.add}) {
@@ -25,7 +25,6 @@ class ProductListView extends StatelessWidget {
       shape: const CircleBorder(),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class ProductListView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(item.name, style: kItemNameStyle),
-                  Text(item.color, style: kItemColorStyle),
+                  Text(item.category.name.toString(), style: kItemColorStyle),
                   Text(item.price, style: kItemPriceStyle),
                 ],
               ),
@@ -54,7 +53,7 @@ class ProductListView extends StatelessWidget {
               Column(
                 children: [
                   countButton(index, controller.increase),
-                  Obx(() => Text(controller.allProducts[index].count.toString())),
+                   Text(controller.filteredProduct[index].quantity.toString()),
                   countButton(index, controller.decrease, icon: Icons.remove)
                 ],
               )
@@ -63,19 +62,15 @@ class ProductListView extends StatelessWidget {
         ),
       );
     }
-    return ListView.builder(
-      padding: const EdgeInsets.all(15),
-      itemCount: controller.allProducts.length,
-      itemBuilder: (_, index) {
-        Product item = controller.allProducts[index];
-        if (controller.isItemListScreen) {
+    return Obx((){
+      return ListView.builder(
+        padding: const EdgeInsets.all(15),
+        itemCount: controller.filteredProduct.length,
+        itemBuilder: (_, index) {
+          Product item = controller.filteredProduct[index];
           return listViewBody(item, index);
-        } else if (controller.isCartScreen && item.count > 0) {
-          return listViewBody(item, index);
-        } else {
-          return Container();
-        }
-      },
-    );
+        },
+      );
+    });
   }
 }
