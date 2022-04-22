@@ -1,16 +1,15 @@
-# cart_app_getx
+# Flutter Shopping Cart with GetX
 
-A new Flutter project.
+![Peek 2022-04-22 00-44](https://user-images.githubusercontent.com/60136319/164578601-6ebb20e7-d31b-46cc-a08e-97dc56bcf26f.gif)
 
-## Getting Started
+## 🚀 Features :
+*  Display all products on the product screen
+*  Display detail of each product on the detail screen
+*  Real-time calculation of total price in the cart screen
+*  Real-time calculation for a total count of selected products
+*  Delete all selected products
+*  Select quantity for each product
+*  Filtered product list in the cart screen
+*  Reactive state management with GetX
+*  Filter items by category (addToCartBranch)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
