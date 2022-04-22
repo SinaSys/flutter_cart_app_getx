@@ -13,3 +13,25 @@
 *  Reactive state management with GetX
 *  Filter items by category ```(AddCategoryForProducts branch)```
 
+
+## 📂 Directory Structure :
+```bash
+lib
+│───main.dart    
+└───model
+    │───product.dart
+    │
+    view
+    │──screen
+    │   │────cart_screen.dart
+    │   │────product_detail_screen.dart
+    │   └────product_list_screen.dart
+    │
+    │──widget
+    │   └────product_list_view.dart
+    │
+    controller
+    │   └────product_controller.dart
+    │
+    util
+       └─────constants.dart
