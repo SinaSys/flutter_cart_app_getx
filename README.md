@@ -9,7 +9,7 @@
 *  Real-time calculation for total count of selected products
 *  Delete all selected products
 *  Select quantity for each product
-*  Filtered product list in the cart screen
+*  Filter product list in the cart screen
 *  Reactive state management with GetX
 *  Filter items by category ```(AddCategoryForProducts branch)```
 
