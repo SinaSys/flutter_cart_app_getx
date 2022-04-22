@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
         leading:
           IconButton(onPressed: (){
             controller.navigateToListItemScreen();
-            Get.back();
+            Navigator.pop(context);
           }, icon: const Icon(Icons.arrow_back_outlined)),
         actions: [
           Padding(
